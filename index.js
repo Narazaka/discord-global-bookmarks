@@ -2,6 +2,8 @@ const { Client, TextChannel } = require("discord.js");
 
 const client = new Client();
 
+client.on("ready", () => console.log("start"));
+
 client.on("message", (message) => {
     const id = message.channel.client.user.id;
     if (message.mentions.users.exists("id", id)) {
