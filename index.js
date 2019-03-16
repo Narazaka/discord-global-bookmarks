@@ -9,6 +9,7 @@ client.on("message", (message) => {
     if (message.mentions.users.some(user => user.id === id)) {
         message.channel.send([
             "--- global-bookmarks help ---",
+            "Make #bookmarks channel first, then you can bookmark and unbookmark any messages by emoji actions.",
             "* React any messages with :bookmark:! I will create bookmark to #bookmarks channel!",
             "* React my messages (include bookmarks) with :x:. I will delete those messages.",
         ].join("\n"));
