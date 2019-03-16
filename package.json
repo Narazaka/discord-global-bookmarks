@@ -4,8 +4,11 @@
   "description": "A discord bot that provides server global bookmarks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "narazaka",
-  "license": "Zlib"
+  "license": "Zlib",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
 }
