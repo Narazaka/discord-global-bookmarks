@@ -1,0 +1,11 @@
+{
+  "name": "discord-global-bookmarks",
+  "version": "1.0.0",
+  "description": "A discord bot that provides server global bookmarks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "narazaka",
+  "license": "Zlib"
+}
