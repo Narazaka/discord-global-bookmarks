@@ -9,6 +9,6 @@
   "author": "narazaka",
   "license": "Zlib",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "discordjs/discord.js#df1889"
   }
 }
