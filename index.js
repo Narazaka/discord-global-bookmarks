@@ -18,7 +18,11 @@ client.on("message", (message) => {
 client.on("messageReactionAdd", (messageReaction) => {
     if (messageReaction.emoji.name === "🔖" && messageReaction.count === 1) {
         const channel = messageReaction.message.guild.channels.find(channel => channel.name === "bookmarks" && channel.type === "text");
-        (/** @type {TextChannel} */(channel)).send(messageReaction.message.url);
+        if (channel) {
+            (/** @type {TextChannel} */(channel)).send(messageReaction.message.url);
+        } else {
+            messageReaction.message.channel.send("#bookmarks channel not found!\nglobal-bookmarks make bookmarks on #bookmarks.\nPlease make #bookmarks channel.");
+        }
     } else if (messageReaction.emoji.name === "❌" && messageReaction.message.author.id === messageReaction.message.channel.client.user.id) {
         messageReaction.message.delete();
     }
