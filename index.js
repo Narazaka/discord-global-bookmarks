@@ -1,4 +1,4 @@
-const { Client, TextChannel, Constants } = require("discord.js");
+const { Client, TextChannel, Constants, MessageEmbed } = require("discord.js");
 
 const client = new Client({partials: Object.keys(Constants.PartialTypes)});
 
@@ -16,16 +16,29 @@ client.on("message", (message) => {
     }
 });
 
-client.on("messageReactionAdd", (messageReaction) => {
+client.on("messageReactionAdd", async (messageReaction) => {
+    const message = messageReaction.message;
     if (messageReaction.emoji.name === "🔖" && messageReaction.count === 1) {
-        const channel = messageReaction.message.guild.channels.find(channel => channel.name === "bookmarks" && channel.type === "text");
+        const channel = message.guild.channels.find(channel => channel.name === "bookmarks" && channel.type === "text");
         if (channel) {
-            (/** @type {TextChannel} */(channel)).send(messageReaction.message.url);
+            if (message.partial) await message.fetch();
+            (/** @type {TextChannel} */(channel)).send(
+                message.url,
+                {
+                    embed: new MessageEmbed({
+                        author: {
+                            name: message.author.username,
+                            icon_url: message.author.avatarURL(),
+                        },
+                        description: message.content,
+                    }),
+                },
+            );
         } else {
-            messageReaction.message.channel.send("#bookmarks channel not found!\nglobal-bookmarks make bookmarks on #bookmarks.\nPlease make #bookmarks channel.");
+            message.channel.send("#bookmarks channel not found!\nglobal-bookmarks make bookmarks on #bookmarks.\nPlease make #bookmarks channel.");
         }
-    } else if (messageReaction.emoji.name === "❌" && messageReaction.message.author.id === messageReaction.message.channel.client.user.id) {
-        messageReaction.message.delete();
+    } else if (messageReaction.emoji.name === "❌" && message.author.id === message.channel.client.user.id) {
+        message.delete();
     }
 });
 
