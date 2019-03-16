@@ -10,8 +10,8 @@ Everyone can bookmark messages on #bookmarks channel (like pin).
 
 Make #bookmarks channel first, then you can bookmark and unbookmark any messages by emoji actions.
 
-* React any messages with :bookmark: 🔖! I will create bookmark to #bookmarks channel!
-* React my messages (include bookmarks) with :X:❌. I will delete those messages.
+* React any messages with :bookmark:! I will create bookmark to #bookmarks channel!
+* React my messages (include bookmarks) with :x:. I will delete those messages.
 
 ## License
 
