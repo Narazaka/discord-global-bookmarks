@@ -13,6 +13,10 @@ Make #bookmarks channel first, then you can bookmark and unbookmark any messages
 * React any messages with :bookmark:! I will create bookmark to #bookmarks channel!
 * React my messages (include bookmarks) with :x:. I will delete those messages.
 
+## Inspired by
+
+Bookmarker (personal bookmark) https://discordbots.org/bot/453939662168260612
+
 ## License
 
 This is released under [Zlib license](https://narazaka.net/license/Zlib?2019)
