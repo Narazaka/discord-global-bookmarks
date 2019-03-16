@@ -8,7 +8,7 @@ client.on("message", (message) => {
         message.channel.send([
             "--- global-bookmarks help ---",
             "* React any messages with :bookmark: 🔖! I will create bookmark to #bookmarks channel!",
-            "* React my messages (include bookmarks) with :X:❌. I will delete those messages",
+            "* React my messages (include bookmarks) with :X:❌. I will delete those messages.",
         ].join("\n"));
     }
 });
