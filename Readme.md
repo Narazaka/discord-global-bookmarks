@@ -4,6 +4,8 @@ A discord bot that provides server global bookmarks.
 
 Everyone can bookmark messages on #bookmarks channel (like pin).
 
+[Discord Bot List](https://discordbots.org/bot/556288530226348042)
+
 ## Usage
 
 [Invite this bot](https://discordapp.com/oauth2/authorize?client_id=556288530226348042&scope=bot&permissions=68608)
